@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import GridCell from "./components/GridCell";
 import NoteBox from "./components/NoteBox";
 
@@ -41,13 +41,15 @@ const App = () => {
   const [diag1, diag2] = getDiagonalSums();
 
   return (
-    <div className="min-h-screen bg-gray-100 p-6 flex flex-col items-center gap-6">
-      <h1 className="text-3xl font-bold text-gray-800">🎯 Sumatrix</h1>
+    <div className="min-h-screen bg-gradient-to-br from-slate-200 via-white to-purple-100 font-math p-6">
+      <h1 className="text-4xl md:text-5xl font-bold text-center text-purple-800 mb-10 drop-shadow-md">
+        🧠 Sumatrix
+      </h1>
 
-      <div className="flex flex-col md:flex-row gap-10">
-        {/* Grid + Row Hints */}
-        <div>
-          <div className="grid grid-cols-4 gap-2">
+      <div className="flex flex-col md:flex-row items-start justify-center gap-12 max-w-7xl mx-auto">
+        {/* Tablero */}
+        <div className="bg-white shadow-xl rounded-xl p-6 border-2 border-purple-300">
+          <div className="grid grid-cols-4 gap-3">
             {userGrid.map((row, rowIndex) => (
               <React.Fragment key={rowIndex}>
                 {row.map((value, colIndex) => (
@@ -59,8 +61,8 @@ const App = () => {
                     }
                   />
                 ))}
-                <div className="flex items-center justify-center font-bold text-blue-600">
-                  = {rowSums[rowIndex]}
+                <div className="flex items-center justify-center text-md font-bold text-purple-600 bg-purple-100 rounded-md px-2 py-1">
+                  Σ = {rowSums[rowIndex]}
                 </div>
               </React.Fragment>
             ))}
@@ -68,20 +70,21 @@ const App = () => {
             {[0, 1, 2].map((col) => (
               <div
                 key={`col-${col}`}
-                className="text-center font-bold text-blue-600"
+                className="text-center text-purple-700 font-semibold pt-2"
               >
-                ↓<br />{colSums[col]}
+                ⬇<br />
+                Σ = {colSums[col]}
               </div>
             ))}
-            <div></div> {/* empty bottom-right */}
+            <div></div> {/* Empty bottom-right cell */}
           </div>
-          {/* Diagonal Hints */}
-          <div className="mt-2 text-sm text-center text-purple-700 font-semibold">
-            Diagonal ↘ = {diag1} | Diagonal ↙ = {diag2}
+
+          <div className="mt-4 text-sm text-center text-indigo-700 font-semibold">
+            Diagonal ↘ Σ = {diag1} &nbsp;&nbsp;|&nbsp;&nbsp; Diagonal ↙ Σ = {diag2}
           </div>
         </div>
 
-        {/* Notes */}
+        {/* Área de anotaciones */}
         <NoteBox />
       </div>
     </div>
@@ -89,3 +92,4 @@ const App = () => {
 };
 
 export default App;
+

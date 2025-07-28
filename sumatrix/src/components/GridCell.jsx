@@ -11,7 +11,7 @@ const GridCell = ({ value, onChange }) => {
           onChange(val);
         }
       }}
-      className="w-16 h-16 text-2xl text-center border border-gray-400 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+      className="w-16 h-16 text-2xl text-center border-2 border-purple-400 rounded-lg shadow-md bg-purple-50 focus:outline-none focus:ring-2 focus:ring-purple-600 transition"
     />
   );
 };

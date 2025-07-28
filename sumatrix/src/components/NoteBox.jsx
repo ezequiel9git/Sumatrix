@@ -1,13 +1,13 @@
 const NoteBox = () => {
   return (
-    <div className="w-full md:w-96">
-      <label className="block mb-2 text-lg font-semibold text-gray-700">
-        🧠 Tus Anotaciones
+    <div className="w-full md:w-96 bg-white rounded-xl shadow-lg border border-indigo-300 p-4">
+      <label className="block mb-2 text-lg font-semibold text-indigo-700">
+        📓 Tus Anotaciones
       </label>
       <textarea
         rows={15}
-        placeholder="Aquí puedes escribir ecuaciones, ideas o combinaciones posibles..."
-        className="w-full p-3 border rounded-md resize-none text-sm focus:outline-none focus:ring-2 focus:ring-purple-400"
+        placeholder="Escribe ecuaciones, combinaciones o ideas..."
+        className="w-full p-3 border border-gray-300 rounded-lg resize-none text-sm font-math bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-indigo-400"
       />
     </div>
   );

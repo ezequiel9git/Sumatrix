@@ -15,6 +15,13 @@ const App = () => {
   const [userGrid, setUserGrid] = useState(
     Array.from({ length: 3 }, () => Array(3).fill(""))
   );
+  const [isCorrect, setIsCorrect] = useState(null);
+
+  const cellLabels = [
+    ["A", "B", "C"],
+    ["D", "E", "F"],
+    ["G", "H", "I"]
+  ];
 
   const getRowSums = () =>
     solutionGrid.map((row) => row.reduce((acc, n) => acc + n, 0));
@@ -34,6 +41,18 @@ const App = () => {
     const updated = [...userGrid];
     updated[row][col] = value;
     setUserGrid(updated);
+  };
+
+  const checkSolution = () => {
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 3; j++) {
+        if (parseInt(userGrid[i][j]) !== solutionGrid[i][j]) {
+          setIsCorrect(false);
+          return;
+        }
+      }
+    }
+    setIsCorrect(true);
   };
 
   const rowSums = getRowSums();
@@ -59,6 +78,7 @@ const App = () => {
                     onChange={(val) =>
                       handleInputChange(rowIndex, colIndex, val)
                     }
+                    label={cellLabels[rowIndex][colIndex]}
                   />
                 ))}
                 <div className="flex items-center justify-center text-md font-bold text-purple-600 bg-purple-100 rounded-md px-2 py-1">
@@ -82,6 +102,27 @@ const App = () => {
           <div className="mt-4 text-sm text-center text-indigo-700 font-semibold">
             Diagonal ↘ Σ = {diag1} &nbsp;&nbsp;|&nbsp;&nbsp; Diagonal ↙ Σ = {diag2}
           </div>
+
+          {/* Botón de comprobación y resultado */}
+          <div className="mt-6 flex flex-col items-center gap-3">
+            <button
+              onClick={checkSolution}
+              className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-md shadow-md transition"
+            >
+              Comprobar solución
+            </button>
+
+            {isCorrect === true && (
+              <p className="text-green-700 font-semibold text-lg">
+                ✅ ¡Correcto! Has resuelto el Sumatrix. 🎉
+              </p>
+            )}
+            {isCorrect === false && (
+              <p className="text-red-600 font-semibold text-lg">
+                ❌ Aún hay errores. Revisa los valores.
+              </p>
+            )}
+          </div>
         </div>
 
         {/* Área de anotaciones */}
@@ -92,4 +133,6 @@ const App = () => {
 };
 
 export default App;
+
+
 

@@ -3,7 +3,7 @@
 **Sumatrix** es un juego web de lógica matemática donde debes descubrir una combinación oculta de números en una cuadrícula 3x3. Usa las sumas de filas, columnas y diagonales como pistas, y resuelve el enigma aplicando deducción matemática. ¡Un verdadero Sudoku con superpoderes!
 
 
----
+<br><br>
 
 ## 🎮 ¿Cómo se juega?
 
@@ -15,7 +15,7 @@
 - Puedes usar el **Tablero de Posibilidades** para tachar o marcar posibles números por celda.
 - Haz clic en **"Comprobar solución"** para validar tu respuesta.
 
----
+<br><br>
 
 ## ✨ Características
 
@@ -28,7 +28,7 @@
 - 📱 Diseño responsive
 - 🌈 Estética divertida y temática matemática
 
----
+<br><br>
 
 ## 🚀 Instalación
 
@@ -54,21 +54,7 @@ npm run dev
 4. Accede a la app en: http://localhost:5173
 
 
----
-
-## 🧩 Estructura del proyecto
-
-src/
-├── components/
-│   ├── GridCell.jsx
-│   ├── NoteBox.jsx
-│   └── PossibilityBoard.jsx
-├── App.jsx
-├── main.jsx
-├── index.css
-└── assets/
-
----
+<br><br>
 
 ## 🔮 Posibles mejoras futuras
 
@@ -78,7 +64,7 @@ src/
 - 👥 Modo multijugador por turnos
 - 📊 Estadísticas personales con localStorage
 
----
+<br><br>
 
 ## 📄 Licencia
 

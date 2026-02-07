@@ -1,3 +1,6 @@
+<img width="500" height="500" alt="Sumatrix" src="https://github.com/user-attachments/assets/c312c4b1-3954-46a7-b166-78138714d9e8" />
+
+
 # 🧠 Sumatrix
 
 **Sumatrix** es un juego web de lógica matemática donde debes descubrir una combinación oculta de números en una cuadrícula 3x3. Usa las sumas de filas, columnas y diagonales como pistas, y resuelve el enigma aplicando deducción matemática. ¡Un verdadero Sudoku con superpoderes!
